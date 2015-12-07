@@ -1,0 +1,9 @@
+site:
+  name: "Bodega Demo Market"
+  title: "Sampling the features of Bodega"
+
+app:
+  port: 4096
+  pub_dir: "/public"
+  csrf: false
+  cookie_secret: "Your secret key salt goes here. Replace with random, long string in your project."

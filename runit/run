@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /opt/bodega-server
+npm install
+npm install -g supervisor
+./bin/dev_start.sh

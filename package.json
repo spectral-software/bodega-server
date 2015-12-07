@@ -1,0 +1,53 @@
+{
+  "name": "bodega-server",
+  "private": true,
+  "description": "Server software for the Bodega container",
+  "author": "Spectral Software <opspec@sigaint.org>",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/spectral-software/bodega-server/blob/master/LICENSE.md"
+  },
+  "main": "./server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spectral-software/bodega-server.git"
+  },
+  "engines": {
+    "node": ">=0.8.8"
+  },
+  "dependencies": {
+    "app-module-path": "^1.0.4",
+    "body-parser": "^1.14.1",
+    "chai": "^3.4.0",
+    "config": "*",
+    "consolidate": "^0.13.1",
+    "express": "^4.11.0",
+    "glob": "^5.0.15",
+    "helmet": "^0.15.0",
+    "istanbul": "^0.4.0",
+    "jade": "^1.11.0",
+    "metalogger": "*",
+    "nodebootstrap-server": "*",
+    "should": "^7.1.1",
+    "underscore": "^1.8.3",
+    "yaml": "*"
+  },
+  "devDependencies": {
+    "after": "^0.8.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^2.1.0",
+    "chai": "^1.9.1",
+    "should": "^4.4.4",
+    "jshint": "^2.5.x",
+    "commander": "^2.6.0",
+    "glob": "^4.3.2"
+  },
+  "scripts": {
+    "start": "npm install forever -g && ./bin/start.sh",
+    "dev": "npm install supervisor -g && ./bin/dev_start.sh",
+    "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/",
+    "pretest": "jshint lib test",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/ test/acceptance/"
+  }
+}
